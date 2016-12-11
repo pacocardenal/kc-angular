@@ -1,0 +1,32 @@
+<!-- Doctype de HTML5 -->
+<!DOCTYPE html>
+<html>
+    <head>  
+        <title>Web Workers</title>
+    </head>
+    <body>
+        <script>
+            // Comrpobamos que los Web Workers están disponibles
+            if (typeof(Worker) !== "undefined") {
+                console.log("Web Workers disponibles");
+
+                // Creamos un nuevo Worker
+                var miWorker = new Worker("06-web-workers.js");
+
+                // Suscribimos el worker para que atienda notificaciones
+                miWorker.onmessage = function(evento) {
+
+                    // Escribimos el valor en la consola
+                    console.log(evento.data);
+
+                    // En caso de llegar a 0, paramos el worker
+                    if (evento.data == 0) {
+                        miWorker.terminate();
+                    }
+                }
+            } else {
+                console.log("Web Workers no disponibles");
+            }
+        </script>
+     </body>
+</html>
