@@ -2,5 +2,4 @@ html-css/node_modules
 html-css/audio.mp3
 html-css/video.mp4
 agenda/node_modules
-agenda/app/*.js
-agenda/app/*.js.map
+agenda/out
