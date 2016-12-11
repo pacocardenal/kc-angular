@@ -1,0 +1,40 @@
+<!-- Doctype de HTML5 -->
+<!DOCTYPE html>
+<html>
+    <head>  
+        <title>Degradados</title>
+        <!-- Estilos CSS -->
+        <style>
+            /* Degradado lineal */
+            .lineal {
+                width: 200px;
+                height: 200px;
+                border: 1px solid black;
+                background: linear-gradient(
+                    45deg,
+                    red,
+                    yellow,
+                    deeppink,
+                    green
+                )
+            }
+            /* Degradado radial */
+            .radial {
+                width: 200px;
+                height: 200px;
+                border: 1px solid black;
+                background: radial-gradient(
+                    deeppink,
+                    dodgerblue,
+                    navajowhite,
+                    orangered
+                );
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Degradado lineal -->
+        <div class="lineal"></div>
+        <div class="radial"></div>
+     </body>
+</html>
