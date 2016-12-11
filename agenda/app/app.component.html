@@ -2,5 +2,11 @@
     <h1>Agenda</h1>
 </header>
 <section>
-    <lista-contactos></lista-contactos>
+    <!-- Para enlazar datos de enetrada a un componente, usamos como
+    atributo entre corchetes el atributo expuesto con el decorador
+    'Input' en dicho componente -->
+    <lista-contactos 
+        [contactos]="listaContactos"
+        (eliminar)="eliminarContacto($event)">
+    </lista-contactos>
 </section>

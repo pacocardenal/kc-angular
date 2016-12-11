@@ -1,23 +1,20 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, Input, Output, EventEmitter } from "@angular/core";
 
 @Component({
     selector: "lista-contactos",
     templateUrl: "./app/lista-contactos/lista-contactos.component.html"
 })
 
-export class ListaContactosComponent implements OnInit {
+export class ListaContactosComponent {
 
-  contactos: string[];
+  // Usamos el decorador 'Input' para enlazar datos de entrada
+  @Input() contactos: string[];
 
-  // El método 'ngOnInit' viene dado por la interfaz "OnInit"
-  // que es el hook en el cual inicializamos los valores del
-  // componente
-  ngOnInit(): void {
-    this.contactos = [
-      "Tim Cook",
-      "Bill Gates",
-      "Elon Musk"
-    ]; 
+  // Usamos el decorador 'Output' para notificar datos de salida
+  @Output() eliminar: EventEmitter<string> = new EventEmitter();
+
+  // Usamos 'emit' para notificar eventos
+  notificarEliminacion(contacto: string): void {
+    this.eliminar.emit(contacto);
   }
-
 }
