@@ -1,0 +1,36 @@
+<!-- Doctype de HTML5 -->
+<!DOCTYPE html>
+<html>
+    <head>  
+        <title>Animaciones</title>
+        <!-- Estilos CSS -->
+        <style>
+            /* Creamos una regla para definir una animación */
+            @keyframes colorines {
+                0% {
+                    transform: scale(1);
+                    background-color: dodgerblue;
+                }
+                50% {
+                    transform: scale(.5);
+                    background-color: deeppink;
+                }
+                100% {
+                    transform: scale(1);
+                    background-color: dodgerblue;
+                }
+            }
+
+            /* Usamos la animación */
+            .caja-animada {
+                width: 200px;
+                height: 200px;
+                background-color: dodgerblue;
+                animation: colorines 15s;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="caja-animada"></div>
+     </body>
+</html>
