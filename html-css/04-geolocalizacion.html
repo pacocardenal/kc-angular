@@ -1,0 +1,37 @@
+<!-- Doctype de HTML5 -->
+<!DOCTYPE html>
+<html>
+    <head>  
+        <title>Geolocalización</title>
+    </head>
+    <body>
+        <script>
+            
+            // Preguntamos si Geolocation API está disponible.
+            if (navigator.geolocation) {
+                console.log("Geolocation API disponible");
+
+                // Solicitamos la posición geográfica del usuario.
+                navigator.geolocation.getCurrentPosition(
+
+                    // Si el usuario acepta la acción.
+                    function(datos) {
+                        
+                        // Escribimos la coordenada en la consola
+                        console.log("Latitud: " + datos.coords.latitude);
+                        console.log("Longitud: " + datos.coords.longitude);
+                    },
+
+                    // Si el usuario no acepta la acción.
+                    function() {
+                        console.log("El usuario no ha aceptado la acción");
+                    }
+
+                );
+            } else {
+                console.log("Geolocation API no disponible");
+            }
+
+        </script>
+     </body>
+</html>
