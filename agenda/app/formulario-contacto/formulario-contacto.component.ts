@@ -1,4 +1,5 @@
 import { Component, Output, EventEmitter } from "@angular/core";
+import { Contacto } from "../contacto";
 
 @Component({
     selector: "formulario-contacto",
@@ -7,11 +8,11 @@ import { Component, Output, EventEmitter } from "@angular/core";
 
 export class FormularioContactoComponent {
 
-    nombreContacto: string;
+    contacto: Contacto = new Contacto();
 
-    @Output() nuevoContacto: EventEmitter<string> = new EventEmitter();
+    @Output() nuevoContacto: EventEmitter<Contacto> = new EventEmitter();
     notificarCreacionContacto(): void {
-        this.nuevoContacto.emit(this.nombreContacto);
+        this.nuevoContacto.emit(this.contacto);
     } 
 
 }
