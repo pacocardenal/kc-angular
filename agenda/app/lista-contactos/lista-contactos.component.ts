@@ -1,5 +1,7 @@
 import { Component, Input, Output, EventEmitter } from "@angular/core";
 
+import { Contacto } from "../contactos.service";
+
 @Component({
     selector: "lista-contactos",
     templateUrl: "./app/lista-contactos/lista-contactos.component.html",

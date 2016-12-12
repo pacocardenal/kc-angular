@@ -1,0 +1,20 @@
+{
+  "contactos": [
+    {
+      "nombre": "Tim Cook",
+      "id": 1
+    },
+    {
+      "nombre": "Ellon Musk",
+      "id": 2
+    },
+    {
+      "nombre": "Bill Gates",
+      "id": 3
+    },
+    {
+      "nombre": "Espinete",
+      "id": 4
+    }
+  ]
+}
