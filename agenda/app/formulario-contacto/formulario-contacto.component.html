@@ -1,0 +1,14 @@
+<div>
+    <div>
+        <label for="nombre">Nombre</label>
+        <input 
+            id="nombre"
+            type="text" 
+            placeholder="Ej. Tim Cook"
+            [(ngModel)]="nombreContacto" 
+        />
+    </div>
+    <div>
+        <button (click)="notificarCreacionContacto()">Añadir</button>
+    </div>
+</div>

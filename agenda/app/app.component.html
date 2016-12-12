@@ -1,12 +1,19 @@
-<header>
-    <h1>Agenda</h1>
-</header>
-<section>
-    <!-- Para enlazar datos de enetrada a un componente, usamos como
-    atributo entre corchetes el atributo expuesto con el decorador
-    'Input' en dicho componente -->
-    <lista-contactos 
-        [contactos]="listaContactos"
-        (eliminar)="eliminarContacto($event)">
-    </lista-contactos>
-</section>
+<div class="container">
+    <header>
+        <h1>Agenda</h1>
+    </header>
+    <section>
+
+        <!-- Formulario de alta -->
+        <formulario-contacto
+            (nuevoContacto)="agregarContacto($event)">
+        </formulario-contacto>
+        <!-- Para enlazar datos de enetrada a un componente, usamos como
+        atributo entre corchetes el atributo expuesto con el decorador
+        'Input' en dicho componente -->
+        <lista-contactos 
+            [contactos]="listaContactos"
+            (eliminar)="eliminarContacto($event)">
+        </lista-contactos>
+    </section>
+</div>

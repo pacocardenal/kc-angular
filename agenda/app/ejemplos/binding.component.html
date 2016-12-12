@@ -1,0 +1,32 @@
+<div>
+    <!-- Ejemplo de interpolación de datos -->
+    <div>
+        <strong>Interpolación: </strong> {{ mensaje }}
+    </div>
+    <!-- Ejemplo de enlace de propiedades -->
+    <div>
+        <strong>Propiedades: </strong>
+        <textarea [cols]="obtenerColumnas()" [rows]="obtenerFilas()"></textarea>
+    </div>
+    <!-- Ejemplo de enlace de clases -->
+    <div>
+        <strong>Clases: </strong>
+        <span [class.mensaje-tuneado] = "tuneado">Jugando con clases CSS.</span>
+    </div>
+    <!-- Ejemplo de enlace de estilos -->
+    <div>
+        <strong>Estilos: </strong>
+        <span [style.color]="estiloEnColorAzul">Jugando con estilos CSS.</span>
+    </div>
+    <!-- Ejemplo de enlace de eventos -->
+    <div>
+        <strong>Eventos: </strong>
+        <button (click)="mostrarMensaje()">Mostrar mensaje</button>
+    </div>
+    <!-- Ejemplo de enlace bidireccional -->
+    <div>
+        <strong>Enlace bidireccional: </strong>
+        <input type="text" [(ngModel)]="saludo" />
+        {{ saludo }}
+    </div>
+</div>
