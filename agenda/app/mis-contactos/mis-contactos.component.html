@@ -1,0 +1,20 @@
+        <div class="row">
+            <div class="six columns">
+                <!-- Para enlazar datos de enetrada a un componente, usamos como
+                atributo entre corchetes el atributo expuesto con el decorador
+                'Input' en dicho componente -->
+                <lista-contactos 
+                    [contactos]="listaContactos"
+                    (contactoSeleccionado)="verDetallesContacto($event)">
+                </lista-contactos>
+            </div>
+
+            <div class="six columns">
+                <detalles-contacto
+                    [contacto] = "contactoSeleccionado"
+                    (eliminar) = "eliminarContacto($event)"
+                    (navegarFacebook) = "navegarRuta($event)"
+                    (navegarTwitter) = "navegarRuta($event)">
+                </detalles-contacto>
+            </div>
+        </div>

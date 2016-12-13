@@ -2,18 +2,10 @@
     <header>
         <h1>Agenda</h1>
     </header>
+    <!-- Barra de navegación -->
+    <barra-navegacion></barra-navegacion>
     <section>
-
-        <!-- Formulario de alta -->
-        <formulario-contacto
-            (nuevoContacto)="agregarContacto($event)">
-        </formulario-contacto>
-        <!-- Para enlazar datos de enetrada a un componente, usamos como
-        atributo entre corchetes el atributo expuesto con el decorador
-        'Input' en dicho componente -->
-        <lista-contactos 
-            [contactos]="listaContactos"
-            (eliminar)="eliminarContacto($event)">
-        </lista-contactos>
+        <!-- Zona dinámica -->
+        <router-outlet></router-outlet>
     </section>
 </div>

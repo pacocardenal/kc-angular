@@ -1,0 +1,24 @@
+<div *ngIf="contacto">
+    <!-- Nombre del contacto -->
+    <h5>{{ contacto.nombre }} {{ contacto.apellidos }}</h5>
+    <hr />
+    <!-- Botones para ver perfiles en redes sociales -->
+    <button (click)="notificarNavegacionFacebook()"
+            class="icono">
+        <i class="fa fa-facebook-square" aria-hidden="true"></i>
+    </button>
+    <button (click)="notificarNavegacionTwitter()"
+            class="icono">
+        <i class="fa fa-twitter-square" aria-hidden="true"></i>
+    </button>
+    <hr />
+    <!-- Datos de contacto: teléfono y correo -->
+    <div>
+        {{ contacto.telefono }} | {{ contacto.email }}
+    </div>
+    <!-- Botón eliminar contacto -->
+    <button (click)="notificarEliminacion(contacto)"
+            class="u-full-width boton-eliminar">
+            Eliminar Contacto
+    </button>
+</div>

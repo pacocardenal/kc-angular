@@ -1,14 +1,90 @@
-<div>
+<!-- Podemos obtener una referencia al objeto FormGroup correspondiente
+a un formulario a través de la directiva 'ngForm' -->
+<form #formularioContacto="ngForm" (ngSubmit)="notificarCreacionContacto(formularioContacto)" novalidate>
+
+    <!-- Nombre del contacto -->
     <div>
         <label for="nombre">Nombre</label>
-        <input 
+        <input
             id="nombre"
+            name="nombre" 
             type="text" 
-            placeholder="Ej. Tim Cook"
-            [(ngModel)]="contacto.nombre" 
-        />
+            placeholder="Ej. Tim"
+            ngModel
+            required
+            #campoNombre="ngModel" />
+        <div class="mensaje-error"
+            *ngIf="campoNombre.touched && campoNombre.invalid">
+            El nombre es un campo obligatorio
+        </div>
     </div>
+
+    <!-- Apellidos del contacto -->
     <div>
-        <button (click)="notificarCreacionContacto()">Añadir</button>
+        <label for="apellidos">Apellidos</label>
+        <input 
+            id="apellidos"
+            name="apellidos"
+            type="text"
+            placeholder="Ej. Cook"
+            ngModel
+            required
+            #campoApellidos="ngModel">
+        <div class="mensaje-error"
+            *ngIf="campoApellidos.touched && campoApellidos.invalid">
+            El campo apellidos es obligatorio.
+        </div>
     </div>
-</div>
+
+    <!-- E-mail del contacto -->
+    <div>
+        <label for="email">Correo electrónico</label>
+        <input 
+            id="email"
+            name="email"
+            type="text"
+            placeholder="Ej. tim.cook@apple.com"
+            ngModel>
+    </div>
+
+    <!-- Teléfono del contacto -->
+    <div>
+        <label for="telefono">Teléfono</label>
+        <input 
+            id="telefono"
+            name="telefono"
+            type="text"
+            placeholder="Ej. 555-123456"
+            ngModel>
+    </div>
+
+    <!-- Facebook del contacto -->
+    <div>
+        <label for="facebook">Facebook</label>
+        <input 
+            id="facebook"
+            name="facebook"
+            type="text"
+            placeholder="Ej. tim.cook"
+            ngModel>
+    </div>
+
+    <!-- Twitter del contacto -->
+    <div>
+        <label for="twitter">Twitter</label>
+        <input 
+            id="twitter"
+            name="twitter"
+            type="text"
+            placeholder="Ej. @timcook"
+            ngModel>
+    </div>
+
+    <div>
+        <button type="submit"
+                [disabled]="formularioContacto.invalid"
+                class="button-primary">
+                Añadir
+        </button>
+    </div>
+</form>
