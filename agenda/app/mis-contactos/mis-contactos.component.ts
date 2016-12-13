@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
+
 import { ContactosService } from '../contactos.service';
 import { Contacto } from '../contacto';
 
@@ -14,21 +16,17 @@ listaContactos: Contacto[];
   // Hacemos la inyección de dependencias del servicio
   // Aprovechamos que TypeScript crea un atributo de aquellos
   // argumentos que tienen modificador de acceso y están tipados
-  constructor(private _contactosService: ContactosService) { }
-
-  private _actualizarListaContactos(): void {
-
-    this._contactosService
-        .obtenerContactos()
-        .subscribe((contactos: Contacto[]) => this.listaContactos = contactos);
-
-  }
+  constructor(
+    private _contactosService: ContactosService,
+    private _activatedRoute: ActivatedRoute) { }
 
   // El método 'ngOnInit' viene dado por la interfaz "OnInit"
   // que es el hook en el cual inicializamos los valores del
   // componente
   ngOnInit(): void {
-    this._actualizarListaContactos();
+    this._activatedRoute.data.forEach((data: { contactos: Contacto[] }) => {
+      this.listaContactos = data.contactos;
+    });
   }
 
   agregarContacto(contacto: Contacto): void {
@@ -46,7 +44,7 @@ listaContactos: Contacto[];
           .eliminarContacto(contacto)
           .subscribe(() => {
             this.contactoSeleccionado = null;
-            this._actualizarListaContactos();
+            this.listaContactos = this.listaContactos.filter((c: Contacto) => c.id !== contacto.id);
           })
     }
 

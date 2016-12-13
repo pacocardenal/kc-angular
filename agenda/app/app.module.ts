@@ -13,6 +13,7 @@ import { DetallesContactoComponent} from './detalles-contacto/detalles-contacto.
 import { MisContactosComponent } from './mis-contactos/mis-contactos.component';
 import { NuevoContactoComponent } from './nuevo-contacto/nuevo-contacto.component';
 import { BarraNavegacionComponent } from './barra-navegacion/barra-navegacion.component';
+import { ContactosResolve } from './contactos-resolve.service';
 
 @NgModule({
   // Usamos 'imports' para importar otros módulos
@@ -38,7 +39,8 @@ import { BarraNavegacionComponent } from './barra-navegacion/barra-navegacion.co
   // En 'providers' añadimos todos los servicios de
   // nuestra aplicación
   providers: [
-    ContactosService
+    ContactosService,
+    ContactosResolve
   ],
   bootstrap:    [ 
     AppComponent

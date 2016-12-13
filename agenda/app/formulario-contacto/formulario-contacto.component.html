@@ -1,3 +1,6 @@
+<div class="row">
+    <div class="offset-by-three six columns">
+
 <!-- Podemos obtener una referencia al objeto FormGroup correspondiente
 a un formulario a través de la directiva 'ngForm' -->
 <form #formularioContacto="ngForm" (ngSubmit)="notificarCreacionContacto(formularioContacto)" novalidate>
@@ -12,7 +15,8 @@ a un formulario a través de la directiva 'ngForm' -->
             placeholder="Ej. Tim"
             ngModel
             required
-            #campoNombre="ngModel" />
+            #campoNombre="ngModel"
+            class="u-full-width" />
         <div class="mensaje-error"
             *ngIf="campoNombre.touched && campoNombre.invalid">
             El nombre es un campo obligatorio
@@ -29,7 +33,8 @@ a un formulario a través de la directiva 'ngForm' -->
             placeholder="Ej. Cook"
             ngModel
             required
-            #campoApellidos="ngModel">
+            #campoApellidos="ngModel"
+            class="u-full-width">
         <div class="mensaje-error"
             *ngIf="campoApellidos.touched && campoApellidos.invalid">
             El campo apellidos es obligatorio.
@@ -44,7 +49,8 @@ a un formulario a través de la directiva 'ngForm' -->
             name="email"
             type="text"
             placeholder="Ej. tim.cook@apple.com"
-            ngModel>
+            ngModel
+            class="u-full-width">
     </div>
 
     <!-- Teléfono del contacto -->
@@ -55,7 +61,8 @@ a un formulario a través de la directiva 'ngForm' -->
             name="telefono"
             type="text"
             placeholder="Ej. 555-123456"
-            ngModel>
+            ngModel
+            class="u-full-width">
     </div>
 
     <!-- Facebook del contacto -->
@@ -66,7 +73,8 @@ a un formulario a través de la directiva 'ngForm' -->
             name="facebook"
             type="text"
             placeholder="Ej. tim.cook"
-            ngModel>
+            ngModel
+            class="u-full-width">
     </div>
 
     <!-- Twitter del contacto -->
@@ -77,14 +85,18 @@ a un formulario a través de la directiva 'ngForm' -->
             name="twitter"
             type="text"
             placeholder="Ej. @timcook"
-            ngModel>
+            ngModel
+            class="u-full-width">
     </div>
 
     <div>
         <button type="submit"
                 [disabled]="formularioContacto.invalid"
-                class="button-primary">
+                class="button-primary u-full-width">
                 Añadir
         </button>
     </div>
 </form>
+
+    </div>
+</div>
